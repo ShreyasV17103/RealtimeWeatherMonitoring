@@ -3,21 +3,19 @@ from flask import Flask, jsonify, render_template
 
 app = Flask(__name__)
 
-API_KEY = '6e75668b3fa82bc8e3848ad4c729d5b6'  # Replace with your actual API key
-BASE_URL = 'http://api.openweathermap.org/data/2.5/weather'
+#API_KEY = '6e75668b3fa82bc8e3848ad4c729d5b6'  # Replace with your actual API key
+#BASE_URL = 'http://api.openweathermap.org/data/2.5/weather'
 
-# Route to serve the homepage (index.html)
 @app.route('/')
 def index():
     return render_template('index.html')
 
-# Route to return weather data for a specific city as JSON
 @app.route('/weather/<city>', methods=['GET'])
 def get_weather_data(city):
     params = {
         'q': city,
         'appid': API_KEY,
-        'units': 'metric'  # Use metric units for temperature in Celsius
+        'units': 'metric'  
     }
     
     response = requests.get(BASE_URL, params=params)
@@ -26,16 +24,16 @@ def get_weather_data(city):
         data = response.json()
         weather_info = {
             "temp": data['main']['temp'],
-            "feels_like": data['main']['feels_like'],  # Feels like temperature
-            "pressure": data['main']['pressure'],      # Atmospheric pressure
-            "humidity": data['main']['humidity'],       # Humidity percentage
-            "visibility": data['visibility'] / 1000,   # Visibility in kilometers
-            "clouds": data['clouds']['all'],            # Cloud coverage percentage
-            "sunrise": data['sys']['sunrise'],          # Sunrise time
-            "sunset": data['sys']['sunset'],            # Sunset time
-            "wind_speed": data['wind']['speed'],        # Wind speed
-            "description": data['weather'][0]['description'],  # Weather description
-            "coord": data['coord']                       # Coordinates (latitude and longitude)
+            "feels_like": data['main']['feels_like'],  
+            "pressure": data['main']['pressure'],     
+            "humidity": data['main']['humidity'],      
+            "visibility": data['visibility'] / 1000,  
+            "clouds": data['clouds']['all'],           
+            "sunrise": data['sys']['sunrise'],        
+            "sunset": data['sys']['sunset'],           
+            "wind_speed": data['wind']['speed'],      
+            "description": data['weather'][0]['description'],  
+            "coord": data['coord']                       
         }
         return jsonify(weather_info)
     else:
