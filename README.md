@@ -1,5 +1,9 @@
 # RealtimeWeatherMonitoring
-This project is designed to retrieve real-time weather data from the OpenWeatherMap API and provide insightful summaries and alerts for various metropolitan cities in India. The system is capable of rolling up daily weather data, calculating key aggregates such as average, minimum, and maximum temperature, identifying dominant weather conditions, and alerting users if specific thresholds are breached. Additionally, it offers visualizations for historical trends and daily weather summaries.
+This project is designed to retrieve real-time weather data from the OpenWeatherMap API(https://openweathermap.org/api)and provide insightful summaries and alerts for various metropolitan cities in India. The system is capable of rolling up daily weather data, calculating key aggregates such as average, minimum, and maximum temperature, identifying dominant weather conditions, and alerting users if specific thresholds are breached. Additionally, it offers visualizations for historical trends and daily weather summaries.
+
+#Google maps api
+from google cloud create a google map api and paste it in Scripts.js file
+https://console.cloud.google.com/home/dashboard
 
 Features
 Real-time Data Retrieval:
