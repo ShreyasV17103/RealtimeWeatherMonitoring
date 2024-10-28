@@ -4,7 +4,7 @@ This project is designed to retrieve real-time weather data from the OpenWeather
 #Google maps api
 from google cloud create a google map api and paste it in Scripts.js file
 
-
+   
 https://console.cloud.google.com/home/dashboard
 
 Features
